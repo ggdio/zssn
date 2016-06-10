@@ -1,11 +1,7 @@
-package br.com.ggdio.zssn.shared.person;
+package br.com.ggdio.zssn.shared;
 
 import java.time.LocalDate;
 import java.util.Set;
-
-import br.com.ggdio.zssn.shared.UniqueKey;
-import br.com.ggdio.zssn.shared.inventory.Item;
-import br.com.ggdio.zssn.shared.position.Location;
 
 /**
  * Decorator Wrapper for Person

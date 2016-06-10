@@ -1,19 +1,20 @@
-package br.com.ggdio.zssn.shared.person;
+package br.com.ggdio.zssn.infrastructure.data;
 
 import java.time.LocalDate;
 import java.util.Set;
 
+import br.com.ggdio.zssn.shared.Item;
+import br.com.ggdio.zssn.shared.Location;
+import br.com.ggdio.zssn.shared.Person;
 import br.com.ggdio.zssn.shared.UniqueKey;
-import br.com.ggdio.zssn.shared.inventory.Item;
-import br.com.ggdio.zssn.shared.position.Location;
 
-public class DefaultPerson extends Person {
+public class PersonData extends Person {
 	
-	public DefaultPerson() {
+	public PersonData() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public DefaultPerson(Long id, String name, LocalDate birthday, UniqueKey gender, UniqueKey status, Location location, Set<Item> items) {
+	public PersonData(Long id, String name, LocalDate birthday, UniqueKey gender, UniqueKey status, Location location, Set<Item> items) {
 		super();
 		this.id = id;
 		this.name = name;

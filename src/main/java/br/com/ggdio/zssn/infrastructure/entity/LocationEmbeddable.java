@@ -3,11 +3,16 @@ package br.com.ggdio.zssn.infrastructure.entity;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
-import br.com.ggdio.zssn.shared.position.Location;
-import br.com.ggdio.zssn.shared.position.LocationDecorator;
+import br.com.ggdio.zssn.infrastructure.data.LocationData;
+import br.com.ggdio.zssn.shared.Location;
+import br.com.ggdio.zssn.shared.LocationDecorator;
 
 @Embeddable
 public class LocationEmbeddable extends LocationDecorator {
+	
+	public LocationEmbeddable() {
+		this(new LocationData());
+	}
 
 	public LocationEmbeddable(Location location) {
 		super(location);

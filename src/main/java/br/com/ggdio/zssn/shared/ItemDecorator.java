@@ -1,6 +1,4 @@
-package br.com.ggdio.zssn.shared.inventory;
-
-import br.com.ggdio.zssn.shared.UniqueKey;
+package br.com.ggdio.zssn.shared;
 
 public abstract class ItemDecorator extends Item {
 	

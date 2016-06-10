@@ -1,10 +1,10 @@
-package br.com.ggdio.zssn.shared.position;
+package br.com.ggdio.zssn.shared;
 
 public class LocationDecorator extends Location {
 	
 	private final Location location;
 
-	public LocationDecorator(Location location) {
+	protected LocationDecorator(Location location) {
 		this.location = location;
 	}
 

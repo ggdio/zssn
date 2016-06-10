@@ -9,9 +9,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import br.com.ggdio.zssn.shared.person.Infection;
-import br.com.ggdio.zssn.shared.person.InfectionDecorator;
-import br.com.ggdio.zssn.shared.person.Person;
+import br.com.ggdio.zssn.shared.Infection;
+import br.com.ggdio.zssn.shared.InfectionDecorator;
+import br.com.ggdio.zssn.shared.Person;
 import br.com.ggdio.zssn.util.CharacterUtil;
 
 @Entity

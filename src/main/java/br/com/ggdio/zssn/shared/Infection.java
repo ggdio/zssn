@@ -1,4 +1,4 @@
-package br.com.ggdio.zssn.shared.person;
+package br.com.ggdio.zssn.shared;
 
 /**
  * Infection Report
@@ -6,14 +6,13 @@ package br.com.ggdio.zssn.shared.person;
  * @author Dio
  *
  */
-@SuppressWarnings("unused")
 public abstract class Infection {
 
-	private Long id;
-	private Person victim;
-	private Person firstReporter;
-	private Person secondReporter;
-	private Person thirdReporter;
+	protected Long id;
+	protected Person victim;
+	protected Person firstReporter;
+	protected Person secondReporter;
+	protected Person thirdReporter;
 	
 	protected abstract Long getId();
 	protected abstract Person getVictim();

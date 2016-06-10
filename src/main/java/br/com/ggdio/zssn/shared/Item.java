@@ -1,7 +1,6 @@
-package br.com.ggdio.zssn.shared.inventory;
+package br.com.ggdio.zssn.shared;
 
 import br.com.ggdio.zssn.domain.enumeration.ItemType;
-import br.com.ggdio.zssn.shared.UniqueKey;
 
 /**
  * Inventory Item
@@ -9,12 +8,11 @@ import br.com.ggdio.zssn.shared.UniqueKey;
  * @author Dio
  *
  */
-@SuppressWarnings("unused")
 public abstract class Item {
 	
-	private Long id;
-	private ItemType type;
-	private int quantity;
+	protected Long id;
+	protected ItemType type;
+	protected int quantity;
 	
 	public abstract Long getId();
 	public abstract UniqueKey getType();

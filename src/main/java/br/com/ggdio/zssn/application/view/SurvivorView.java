@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 
 import br.com.ggdio.zssn.domain.model.LastLocation;
 import br.com.ggdio.zssn.domain.model.Survivor;
-import br.com.ggdio.zssn.shared.inventory.Item;
+import br.com.ggdio.zssn.shared.Item;
 
 public class SurvivorView {
 

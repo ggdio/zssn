@@ -13,13 +13,18 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import br.com.ggdio.zssn.infrastructure.data.PersonData;
 import br.com.ggdio.zssn.infrastructure.entity.util.EntityUtil;
-import br.com.ggdio.zssn.shared.person.Person;
-import br.com.ggdio.zssn.shared.person.PersonDecorator;
+import br.com.ggdio.zssn.shared.Person;
+import br.com.ggdio.zssn.shared.PersonDecorator;
 
 @Entity
 @Table(name="PERSON")
 public class PersonEntity extends PersonDecorator {
+	
+	public PersonEntity() {
+		this(new PersonData());
+	}
 
 	public PersonEntity(Person person) {
 		super(person);

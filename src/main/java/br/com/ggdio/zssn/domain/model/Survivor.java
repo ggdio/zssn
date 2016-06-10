@@ -4,11 +4,11 @@ import java.time.LocalDate;
 import java.util.Set;
 
 import br.com.ggdio.zssn.domain.enumeration.Gender;
-import br.com.ggdio.zssn.shared.inventory.Item;
-import br.com.ggdio.zssn.shared.person.Person;
-import br.com.ggdio.zssn.shared.person.PersonDecorator;
+import br.com.ggdio.zssn.infrastructure.entity.PersonEntity;
+import br.com.ggdio.zssn.shared.Item;
+import br.com.ggdio.zssn.shared.Person;
 
-public abstract class Survivor extends PersonDecorator {
+public abstract class Survivor extends PersonEntity {
 	
 	private LastLocation lastLocation;
 

@@ -8,8 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
-import br.com.ggdio.zssn.shared.inventory.Item;
-import br.com.ggdio.zssn.shared.inventory.ItemDecorator;
+import br.com.ggdio.zssn.infrastructure.data.ItemData;
+import br.com.ggdio.zssn.shared.Item;
+import br.com.ggdio.zssn.shared.ItemDecorator;
 
 /**
  * Item Entity Mapping for Persistence Layer
@@ -18,9 +19,13 @@ import br.com.ggdio.zssn.shared.inventory.ItemDecorator;
  */
 @Entity
 @Table(name="ITEM", uniqueConstraints=
-	@UniqueConstraint(columnNames={"type", "id_person"}
+	@UniqueConstraint(columnNames={"DO_TYPE", "ID_PERSON"}
 ))
 public class ItemEntity extends ItemDecorator {
+	
+	public ItemEntity() {
+		this(new ItemData());
+	}
 
 	public ItemEntity(Item inner) {
 		super(inner);

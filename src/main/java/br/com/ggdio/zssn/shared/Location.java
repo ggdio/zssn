@@ -1,15 +1,14 @@
-package br.com.ggdio.zssn.shared.position;
+package br.com.ggdio.zssn.shared;
 
 /**
  * Component that provides localization data
  * @author Dio
  *
  */
-@SuppressWarnings("unused")
 public abstract class Location {
 
-	private Double latitude;
-	private Double longitude;
+	protected Double latitude;
+	protected Double longitude;
 	
 	protected abstract Double getLatitude();
 	protected abstract Double getLongitude();

@@ -1,4 +1,4 @@
-package br.com.ggdio.zssn.shared.person;
+package br.com.ggdio.zssn.shared;
 
 public abstract class InfectionDecorator extends Infection {
 	

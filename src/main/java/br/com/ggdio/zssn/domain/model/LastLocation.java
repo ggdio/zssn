@@ -1,7 +1,7 @@
 package br.com.ggdio.zssn.domain.model;
 
-import br.com.ggdio.zssn.shared.position.Location;
-import br.com.ggdio.zssn.shared.position.LocationDecorator;
+import br.com.ggdio.zssn.shared.Location;
+import br.com.ggdio.zssn.shared.LocationDecorator;
 
 public class LastLocation extends LocationDecorator {
 

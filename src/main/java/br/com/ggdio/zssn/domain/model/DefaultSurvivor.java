@@ -1,7 +1,7 @@
 package br.com.ggdio.zssn.domain.model;
 
 import br.com.ggdio.zssn.domain.enumeration.Status;
-import br.com.ggdio.zssn.shared.person.Person;
+import br.com.ggdio.zssn.shared.Person;
 
 public class DefaultSurvivor extends Survivor {
 	
