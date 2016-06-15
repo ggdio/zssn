@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+				 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm    
+				 http://java.sun.com/xml/ns/persistence/orm_1_0.xsd"
+				 version="1.0">
+
+	<description>Person Entity Table</description>
+
+	<entity class="br.com.ggdio.zssn.domain.model.Person" access="FIELD">
+		<table name="PERSON" />
+		<attributes>
+			<id name="id">
+				<column name="ID_PERSON" />
+				<generated-value strategy="IDENTITY" />
+			</id>
+
+			<basic name="name">
+				<column name="DS_NAME" length="255" nullable="false" />
+			</basic>
+
+			<basic name="birthday">
+				<column name="DT_BIRTH" nullable="false" />
+			</basic>
+
+			<basic name="gender">
+				<column name="DO_GENDER" nullable="false" />
+				<enumerated>STRING</enumerated>
+			</basic>
+
+			<basic name="status">
+				<column name="DO_STATUS" nullable="false" />
+				<enumerated>STRING</enumerated>
+			</basic>
+
+			<one-to-many name="items">
+				<join-column name="ID_PERSON"/>
+			</one-to-many>
+			
+			<embedded name="location" />
+		</attributes>
+	</entity>
+	
+	<embeddable class="br.com.ggdio.zssn.domain.model.Location">
+		<attributes>
+			<basic name="latitude">
+				<column name="VL_LATITUDE" nullable="false" />
+			</basic>
+
+			<basic name="longitude">
+				<column name="VL_LONGITUDE" nullable="false" />
+			</basic>
+		</attributes>
+	</embeddable>
+
+</entity-mappings>

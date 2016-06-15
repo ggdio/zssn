@@ -1,30 +1,25 @@
-package br.com.ggdio.zssn.infrastructure.data;
+package br.com.ggdio.zssn.domain.model;
 
 import java.time.LocalDate;
 import java.util.Set;
 
-import br.com.ggdio.zssn.shared.Item;
-import br.com.ggdio.zssn.shared.Location;
-import br.com.ggdio.zssn.shared.Person;
-import br.com.ggdio.zssn.shared.UniqueKey;
+import br.com.ggdio.zssn.domain.enumeration.Gender;
+import br.com.ggdio.zssn.domain.enumeration.Status;
 
-public class PersonData extends Person {
+public class Person {
 	
-	public PersonData() {
+	private Long id;
+	private String name;
+	private LocalDate birthday;
+	private Gender gender;
+	private Status status;
+	private Location location;
+	private Set<Item> items;
+	
+	public Person() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public PersonData(Long id, String name, LocalDate birthday, UniqueKey gender, UniqueKey status, Location location, Set<Item> items) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.birthday = birthday;
-		this.gender = gender;
-		this.status = status;
-		this.location = location;
-		this.items = items;
-	}
-
 	public Long getId() {
 		return id;
 	}
@@ -37,11 +32,11 @@ public class PersonData extends Person {
 		return birthday;
 	}
 	
-	public UniqueKey getGender() {
+	public Gender getGender() {
 		return gender;
 	}
 	
-	public UniqueKey getStatus() {
+	public Status getStatus() {
 		return status;
 	}
 	
@@ -65,11 +60,11 @@ public class PersonData extends Person {
 		this.birthday = birthday;
 	}
 	
-	public void setGender(UniqueKey gender) {
+	public void setGender(Gender gender) {
 		this.gender = gender;
 	}
 	
-	public void setStatus(UniqueKey status) {
+	public void setStatus(Status status) {
 		this.status = status;
 	}
 	
@@ -80,5 +75,5 @@ public class PersonData extends Person {
 	public void setItems(Set<Item> items) {
 		this.items = items;
 	}
-	
+
 }

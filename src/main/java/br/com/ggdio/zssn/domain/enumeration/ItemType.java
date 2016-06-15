@@ -1,13 +1,11 @@
 package br.com.ggdio.zssn.domain.enumeration;
 
-import br.com.ggdio.zssn.shared.UniqueKey;
-
 /**
  * Item Type Domain Object
  * @author Dio
  *
  */
-public enum ItemType implements UniqueKey {
+public enum ItemType {
 
 	WATER(4),
 	FOOD(3),
@@ -22,11 +20,6 @@ public enum ItemType implements UniqueKey {
 	
 	public int getPoints() {
 		return points;
-	}
-	
-	@Override
-	public String getKey() {
-		return toString();
 	}
 	
 }

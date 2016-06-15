@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+				 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm    
+				 http://java.sun.com/xml/ns/persistence/orm_1_0.xsd"
+				 version="1.0">
+
+	<description>Infection Entity Table</description>
+
+	<entity class="br.com.ggdio.zssn.domain.model.Infection" access="FIELD">
+		<table name="INFECTION" />
+		<attributes>
+			<id name="id">
+				<column name="ID_INFECTION" />
+				<generated-value strategy="IDENTITY" />
+			</id>
+			
+			<many-to-one name="firstReporter" target-entity="br.com.ggdio.zssn.domain.model.Person">
+				<join-column name="ID_FIRSTREPORTER" nullable="false" />
+			</many-to-one>
+			
+			<many-to-one name="secondReporter" target-entity="br.com.ggdio.zssn.domain.model.Person">
+				<join-column name="ID_SECONDREPORTER" />
+			</many-to-one>
+			
+			<many-to-one name="thirdReporter" target-entity="br.com.ggdio.zssn.domain.model.Person">
+				<join-column name="ID_THIRDREPORTER" />
+			</many-to-one>
+			
+			<one-to-one name="victim" target-entity="br.com.ggdio.zssn.domain.model.Person">
+				<join-column name="ID_VICTIM" nullable="false" unique="true" />
+			</one-to-one>
+		</attributes>
+	</entity>
+	
+</entity-mappings>
