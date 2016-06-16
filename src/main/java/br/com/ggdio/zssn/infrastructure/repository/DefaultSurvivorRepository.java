@@ -2,36 +2,31 @@ package br.com.ggdio.zssn.infrastructure.repository;
 
 import java.util.List;
 
-import javax.inject.Inject;
-import javax.inject.Named;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.com.ggdio.zssn.domain.model.Person;
 import br.com.ggdio.zssn.domain.repository.SurvivorRepository;
 
-@Named
+@Repository
 public class DefaultSurvivorRepository implements SurvivorRepository {
 	
-	private final EntityManagerFactory emf;
+	@PersistenceContext
+	private EntityManager em;
 	
-	@Inject
-	public DefaultSurvivorRepository(EntityManagerFactory emf) {
-		this.emf = emf;
-	}
-
 	@Override
 	public List<Person> findAll() {
-		EntityManager em = emf.createEntityManager();
-		List<Person> result = em.createQuery("from Person").getResultList();
-		em.close();
-		
+		List<Person> result = em.createQuery("from Person", Person.class).getResultList();
 		return result;
 	}
 	
 	@Override
+	@Transactional
 	public void store(Person person) {
-		
+		em.persist(person);
 	}
 	
 	

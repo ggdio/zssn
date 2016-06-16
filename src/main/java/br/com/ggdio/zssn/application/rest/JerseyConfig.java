@@ -12,6 +12,7 @@ import br.com.ggdio.zssn.application.rest.resource.SurvivorResource;
 public class JerseyConfig extends ResourceConfig {
 	
 	public JerseyConfig() throws ClassNotFoundException {
+		packages(JerseyConfig.class.getPackage().getName());
 		registerResources();
 	}
 

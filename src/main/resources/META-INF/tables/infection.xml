@@ -6,8 +6,9 @@
 				 version="1.0">
 
 	<description>Infection Entity Table</description>
-
-	<entity class="br.com.ggdio.zssn.domain.model.Infection" access="FIELD">
+	
+	<package>br.com.ggdio.zssn.domain.model</package>
+	<entity class="DefaultInfection" access="FIELD">
 		<table name="INFECTION" />
 		<attributes>
 			<id name="id">
@@ -15,19 +16,19 @@
 				<generated-value strategy="IDENTITY" />
 			</id>
 			
-			<many-to-one name="firstReporter" target-entity="br.com.ggdio.zssn.domain.model.Person">
+			<many-to-one name="firstReporter" target-entity="Person" fetch="EAGER">
 				<join-column name="ID_FIRSTREPORTER" nullable="false" />
 			</many-to-one>
 			
-			<many-to-one name="secondReporter" target-entity="br.com.ggdio.zssn.domain.model.Person">
+			<many-to-one name="secondReporter" target-entity="Person" fetch="EAGER">
 				<join-column name="ID_SECONDREPORTER" />
 			</many-to-one>
 			
-			<many-to-one name="thirdReporter" target-entity="br.com.ggdio.zssn.domain.model.Person">
+			<many-to-one name="thirdReporter" target-entity="Person" fetch="EAGER">
 				<join-column name="ID_THIRDREPORTER" />
 			</many-to-one>
 			
-			<one-to-one name="victim" target-entity="br.com.ggdio.zssn.domain.model.Person">
+			<one-to-one name="victim" target-entity="Person" fetch="EAGER">
 				<join-column name="ID_VICTIM" nullable="false" unique="true" />
 			</one-to-one>
 		</attributes>

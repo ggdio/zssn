@@ -7,7 +7,8 @@
 
 	<description>Person Entity Table</description>
 
-	<entity class="br.com.ggdio.zssn.domain.model.Person" access="FIELD">
+	<package>br.com.ggdio.zssn.domain.model</package>
+	<entity class="Person" access="FIELD">
 		<table name="PERSON" />
 		<attributes>
 			<id name="id">
@@ -33,15 +34,15 @@
 				<enumerated>STRING</enumerated>
 			</basic>
 
-			<one-to-many name="items">
-				<join-column name="ID_PERSON"/>
+			<one-to-many name="items" fetch="EAGER">
+				<join-column name="ID_PERSON" />
 			</one-to-many>
 			
 			<embedded name="location" />
 		</attributes>
 	</entity>
 	
-	<embeddable class="br.com.ggdio.zssn.domain.model.Location">
+	<embeddable class="Location">
 		<attributes>
 			<basic name="latitude">
 				<column name="VL_LATITUDE" nullable="false" />

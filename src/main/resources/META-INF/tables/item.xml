@@ -7,7 +7,8 @@
 
 	<description>Item Entity Table</description>
 
-	<entity class="br.com.ggdio.zssn.domain.model.Item" access="FIELD">
+	<package>br.com.ggdio.zssn.domain.model</package>
+	<entity class="Item" access="FIELD">
 		<table name="ITEM">
 			<unique-constraint>
 				<column-name>DO_TYPE</column-name>
@@ -25,9 +26,8 @@
 				<enumerated>STRING</enumerated>
 			</basic>
 
-			<basic name="status">
+			<basic name="quantity">
 				<column name="NR_QUANTITY" nullable="false" />
-				<enumerated>STRING</enumerated>
 			</basic>
 		</attributes>
 	</entity>
