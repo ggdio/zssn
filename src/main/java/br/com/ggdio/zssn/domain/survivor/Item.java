@@ -1,4 +1,4 @@
-package br.com.ggdio.zssn.domain.model;
+package br.com.ggdio.zssn.domain.survivor;
 
 import br.com.ggdio.zssn.domain.enumeration.ItemType;
 
@@ -8,14 +8,19 @@ import br.com.ggdio.zssn.domain.enumeration.ItemType;
  * @author Dio
  *
  */
-public abstract class Item {
+public class Item {
 	
 	private Long id;
 	private ItemType type;
 	private int quantity;
 	
-	public Item() {
+	protected Item() {
 		// TODO Auto-generated constructor stub
+	}
+	
+	public Item(ItemType type, int qtt) {
+		this.type = type;
+		this.quantity = qtt;
 	}
 	
 	public Long getId() {

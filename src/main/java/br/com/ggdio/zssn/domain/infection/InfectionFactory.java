@@ -3,7 +3,7 @@ package br.com.ggdio.zssn.domain.infection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.ggdio.zssn.domain.model.Person;
+import br.com.ggdio.zssn.domain.survivor.Survivor;
 
 @Service
 public class InfectionFactory {
@@ -15,7 +15,7 @@ public class InfectionFactory {
 		this.repository = repository;
 	}
 
-	public Infection getInfectionInstance(Person victim) {
+	public Infection getInfectionInstance(Survivor victim) {
 		if(victim == null) return null;
 		
 		Infection infection = repository.findByVictim(victim.getId());

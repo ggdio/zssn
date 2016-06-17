@@ -1,6 +1,6 @@
 package br.com.ggdio.zssn.domain.infection;
 
-import br.com.ggdio.zssn.domain.model.Person;
+import br.com.ggdio.zssn.domain.survivor.Survivor;
 
 /**
  * Infection Report
@@ -12,19 +12,19 @@ public interface Infection {
 
 	public Long getId();
 	
-	public Person getVictim();
+	public Survivor getVictim();
 	
-	public Person getFirstReporter();
+	public Survivor getFirstReporter();
 	
-	public Person getSecondReporter();
+	public Survivor getSecondReporter();
 	
-	public Person getThirdReporter();
+	public Survivor getThirdReporter();
 	
 	/**
 	 * Report an infection occurrence.
 	 * <p> Three different reporters are necessary to flag a survivor as infected
 	 * @param reporter
 	 */
-	public void reportInfection(Person reporter);
+	public void reportInfection(Survivor reporter);
 	
 }

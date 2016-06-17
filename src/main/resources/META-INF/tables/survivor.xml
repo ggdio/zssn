@@ -6,13 +6,15 @@
 				 version="1.0">
 
 	<description>Person Entity Table</description>
-
-	<package>br.com.ggdio.zssn.domain.model</package>
-	<entity class="Person" access="FIELD">
-		<table name="PERSON" />
+	
+	<package>br.com.ggdio.zssn.domain.survivor</package>
+	<entity class="Survivor" access="FIELD">
+		<table name="SURVIVOR" />
+		<inheritance strategy="SINGLE_TABLE"/>
+		
 		<attributes>
 			<id name="id">
-				<column name="ID_PERSON" />
+				<column name="ID_SURVIVOR" />
 				<generated-value strategy="IDENTITY" />
 			</id>
 
@@ -20,8 +22,8 @@
 				<column name="DS_NAME" length="255" nullable="false" />
 			</basic>
 
-			<basic name="birthday">
-				<column name="DT_BIRTH" nullable="false" />
+			<basic name="age">
+				<column name="NR_AGE" nullable="false" />
 			</basic>
 
 			<basic name="gender">
@@ -35,7 +37,11 @@
 			</basic>
 
 			<one-to-many name="items" fetch="EAGER">
-				<join-column name="ID_PERSON" />
+				<join-column name="ID_SURVIVOR" />
+				<cascade>
+					<cascade-persist/>
+					<cascade-merge/>
+				</cascade>
 			</one-to-many>
 			
 			<embedded name="location" />

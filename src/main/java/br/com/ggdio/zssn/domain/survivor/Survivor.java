@@ -1,30 +1,25 @@
-package br.com.ggdio.zssn.domain.model;
+package br.com.ggdio.zssn.domain.survivor;
 
-import java.time.LocalDate;
 import java.util.Set;
 
 import br.com.ggdio.zssn.domain.enumeration.Gender;
 import br.com.ggdio.zssn.domain.enumeration.Status;
 
-public class Person {
+public class Survivor {
 	
-	private final Long id;
-	private String name;
-	private LocalDate birthday;
-	private Gender gender;
-	private Status status;
-	private Location location;
-	private Set<Item> items;
+	protected final Long id;
+	protected String name;
+	protected int age;
+	protected Gender gender;
+	protected Status status;
+	protected Location location;
+	protected Set<Item> items;
 	
-	protected Person() {
+	protected Survivor() {
 		this.id = null;
 	}
 	
-	public Person(String name, Gender gender, Location location) {
-		this(name, gender, location, null);
-	}
-	
-	public Person(String name, Gender gender, Location location, Set<Item> items) {
+	public Survivor(String name, Gender gender, Location location, Set<Item> items) {
 		this.id = null;
 		this.name = name;
 		this.gender = gender;
@@ -32,7 +27,7 @@ public class Person {
 		this.location = location;
 		this.items = items;
 		
-		// A person is alive upon registering
+		// A survivor is alive by default
 		this.status = Status.ALIVE;
 	}
 	
@@ -44,12 +39,8 @@ public class Person {
 		return name;
 	}
 	
-	public LocalDate getBirthday() {
-		return birthday;
-	}
-	
-	public int getCurrentAge() {
-		return birthday.with(LocalDate.now()).getYear();
+	public int getAge() {
+		return age;
 	}
 	
 	public Gender getGender() {
@@ -68,7 +59,7 @@ public class Person {
 		return this.status == Status.INFECTED;
 	}
 	
-	public Location getCurrentLocation() {
+	public Location getLastLocation() {
 		return location;
 	}
 	
@@ -80,8 +71,8 @@ public class Person {
 		this.name = name;
 	}
 	
-	public void setBirthday(LocalDate birthday) {
-		this.birthday = birthday;
+	public void setAge(int age) {
+		this.age = age;
 	}
 	
 	public void setGender(Gender gender) {
@@ -91,12 +82,6 @@ public class Person {
 	public void becomeZombie() {
 		if(id != null && isAlive()) {
 			this.status = Status.INFECTED;
-		}
-	}
-	
-	public void becomeDead() {
-		if(id != null && isZombie()) {
-			this.status = Status.DECEASED;
 		}
 	}
 	

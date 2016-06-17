@@ -10,14 +10,9 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		
     	<mapping-file>META-INF/tables/item.xml</mapping-file>
-    	<mapping-file>META-INF/tables/person.xml</mapping-file>
+    	<mapping-file>META-INF/tables/survivor.xml</mapping-file>
     	<mapping-file>META-INF/tables/infection.xml</mapping-file>
     	
-		<class>br.com.ggdio.zssn.domain.model.Item</class>
-		<class>br.com.ggdio.zssn.domain.model.Location</class>
-		<class>br.com.ggdio.zssn.domain.model.Person</class>
-		<class>br.com.ggdio.zssn.domain.model.Infection</class>
-		
 		<properties>		
 			<property name="hibernate.hbm2ddl.auto" value="create-drop"/>
 		</properties>

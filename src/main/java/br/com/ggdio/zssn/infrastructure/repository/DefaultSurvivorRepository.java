@@ -8,8 +8,8 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.ggdio.zssn.domain.model.Person;
-import br.com.ggdio.zssn.domain.repository.SurvivorRepository;
+import br.com.ggdio.zssn.domain.shared.SurvivorRepository;
+import br.com.ggdio.zssn.domain.survivor.Survivor;
 
 @Repository
 public class DefaultSurvivorRepository implements SurvivorRepository {
@@ -18,16 +18,19 @@ public class DefaultSurvivorRepository implements SurvivorRepository {
 	private EntityManager em;
 	
 	@Override
-	public List<Person> findAll() {
-		List<Person> result = em.createQuery("from Person", Person.class).getResultList();
-		return result;
+	public List<Survivor> findAll() {
+		return em.createQuery("from " + Survivor.class.getSimpleName(), Survivor.class).getResultList();
 	}
 	
 	@Override
 	@Transactional
-	public void store(Person person) {
+	public void store(Survivor person) {
 		em.persist(person);
 	}
 	
+	@Override
+	public Survivor findOne(Long id) {
+		return em.find(Survivor.class, id);
+	}
 	
 }

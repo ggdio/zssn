@@ -1,4 +1,4 @@
-package br.com.ggdio.zssn.domain.model;
+package br.com.ggdio.zssn.domain.survivor;
 
 /**
  * Component that provides localization data

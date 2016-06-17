@@ -1,15 +1,15 @@
 package br.com.ggdio.zssn.domain.infection;
 
-import br.com.ggdio.zssn.domain.model.Person;
+import br.com.ggdio.zssn.domain.survivor.Survivor;
 
 class DefaultInfection implements Infection {
 
 	private final Long id;
 	
-	private final Person victim;
-	private final Person firstReporter;
-	private Person secondReporter;
-	private Person thirdReporter;
+	private final Survivor victim;
+	private final Survivor firstReporter;
+	private Survivor secondReporter;
+	private Survivor thirdReporter;
 	
 	DefaultInfection() {
 		this.id = null;
@@ -17,7 +17,7 @@ class DefaultInfection implements Infection {
 		this.firstReporter = null;
 	}
 	
-	public DefaultInfection(Person victim, Person reporter) {
+	public DefaultInfection(Survivor victim, Survivor reporter) {
 		this.id = null;
 		this.victim = victim;
 		this.firstReporter = reporter;
@@ -29,27 +29,27 @@ class DefaultInfection implements Infection {
 	}
 	
 	@Override
-	public Person getVictim() {
+	public Survivor getVictim() {
 		return victim;
 	}
 	
 	@Override
-	public Person getFirstReporter() {
+	public Survivor getFirstReporter() {
 		return firstReporter;
 	}
 	
 	@Override
-	public Person getSecondReporter() {
+	public Survivor getSecondReporter() {
 		return secondReporter;
 	}
 	
 	@Override
-	public Person getThirdReporter() {
+	public Survivor getThirdReporter() {
 		return thirdReporter;
 	}
 	
 	@Override
-	public void reportInfection(Person reporter) {
+	public void reportInfection(Survivor reporter) {
 		if(this.secondReporter == null) {
 			if(!firstReporter.equals(reporter)) {
 				this.secondReporter = reporter;

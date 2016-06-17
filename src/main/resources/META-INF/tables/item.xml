@@ -7,12 +7,12 @@
 
 	<description>Item Entity Table</description>
 
-	<package>br.com.ggdio.zssn.domain.model</package>
+	<package>br.com.ggdio.zssn.domain.survivor</package>
 	<entity class="Item" access="FIELD">
 		<table name="ITEM">
 			<unique-constraint>
 				<column-name>DO_TYPE</column-name>
-				<column-name>ID_PERSON</column-name>
+				<column-name>ID_SURVIVOR</column-name>
 			</unique-constraint>
 		</table>
 		<attributes>
